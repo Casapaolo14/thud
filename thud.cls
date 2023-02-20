@@ -128,7 +128,7 @@
 	\@ifundefined{url}\texttt\url{https://www.dmif.uniud.it/}
 }
 \gdef\thud@rights{%
-		\textcopyright\ \the\year\ \@author\\ This work is shared under the Creative Commons 4.0 License Attribution-NonCommercial-ShareAlike.%
+		%\textcopyright\ \the\year\ \@author\\ This work is shared under the Creative Commons 4.0 License Attribution-NonCommercial-ShareAlike.%
 }
 
 \def\@true{true}
