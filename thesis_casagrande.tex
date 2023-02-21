@@ -63,7 +63,7 @@ Speriamo bene
 %\listoftables
 
 %% Lista delle figure (se presenti)
-%\listoffigures
+\listoffigures
 
 %% Corpo principale del documento
 \mainmatter
@@ -74,13 +74,14 @@ Speriamo bene
 %\nocite{*} %% rimuovere magari in seguito
 %% Capitolo
 \chapter{Introduzione} % Introduzione alla VR + Intro dispositivi + Intro capitoli
+\label{intro}
 La Realtà Virtuale (Virtual Reality, VR) è un'interfaccia avanzata uomo-computer che simula un ambiente realistico \cite{Zheng}.
 All'interno di questo ambiente l'utente è libero di muoversi, esplorare ed interagire con qualsiasi cosa, alimentando la sensazione di sentirsi effettivamente presente all'interno di un mondo virtuale.
 Al giorno d'oggi, la Realtà Virtuale può essere applicata a vari settori tra cui l'intrattenimento, l'educazione, medico e commerciale. \\
 
 L'interazione tra uomo e ambiente virtuale avviene attraverso specifici dispositivi.
 L'interfaccia avanzata più utilizzata nella Realtà Virtuale è il visore VR. 
-Questo visore, denominato \textit{Head Mounted Dispaly}, può essere indossato come un casco che mostra all'utente il mondo virtuale a 360°.
+Questo visore, denominato Head Mounted Dispaly, può essere indossato come un casco che mostra all'utente il mondo virtuale a 360°.
 Il visore VR utilizzato per l'esperimento è il Visore VR HTC Vive Pro, visibile in figura \ref{fig:vive_pro}.
 
 \begin{figure}[h]
@@ -117,8 +118,17 @@ Nel capitolo 5 vengono poi confrontate le interfacce più efficaci, mentre nel c
 %\subsection{Sottosezione}
 
 \chapter{Stato dell'arte} % Studi VR e interfacce + Legame tra VR e dispositivi
-\section{VR e interfacce immersive}
-Esistono molti studi che comparano diverse interfacce immersive per interagire nelle applicazioni VR.
+\section{VR immersiva e UI}
+L'Interfaccia Utente (User Interface, UI) permette l'interazione tra uomo e macchina.
+Si possono implementare quattro interfacce diverse all'interno di :
+\begin{itemize}
+    \item Diegetica: l'UI è integrata all'interno dell'ambiente virtuale, ad esempio fondendosi con oggetti che ne fanno parte;
+    \item Non-diegetica: l'UI viene mostrata fuori dal mondo virtuale, in sovrimpressione sullo schermo;
+    \item Meta: sono interfacce 2D rappresentate nel mondo 3D che fanno parte del mondo virtuale;
+    \item Spaziale: sono elementi UI 3D che non fanno parte del mondo virtuale e servono solo all'utente come informazione;
+\end{itemize} 
+
+Esistono molti studi che comparano diverse interfacce per interagire nelle applicazioni VR immersive.
 Ad esempio, uno studio condotto da Daniel Hepperle et al.\cite{Hepperle} ha confrontato tre diverse interfacce - 2D, 3D e a comando vocale - per capire quale fosse la migliore per la Realtà Virtuale.  
 Nello studio sono stati coinvolti 30 partecipanti, di cui 20 maschi e 10 femmine.
 Degli utenti, solo il 66\% aveva esperienza con sistemi VR e il 50\% aveva già usato un dispositivo 3D prima d'ora.
@@ -127,31 +137,135 @@ I compiti comprendevano selezione, manipolazione, creazione, rotazione e modific
 Dai risultati è emerso che gli utenti, usando l'interfaccia sviluppata in 3D, consideravano l'input intuitivo e naturale; inoltre, rispetto alle altre interfacce, si sentivano più immersi nell'attività. \\
 
 Uno studio di Rennan Raffaele et al.\cite{Raffaele} ha analizzato quale interfaccia immersiva fosse la migliore nei giochi VR.
-Le interfacce a confronto proponevano rappresentazione spaziale, diegetica e non-diegetica.
+Le interfacce a confronto proponevano rappresentazione spaziale, meta, diegetica e non-diegetica.
 Allo studio hanno partecipato 50 utenti, che spaziavano tra designer, sviluppatori e videogiocatori.
 I partecipanti dovevano infine compilare un questionario che paragonava 16 interfacce diverse utilizzate nei videogiochi.
 I risultati hanno mostrato che la rappresentazione diegetica è quella che permette la maggiore immersività di un'interfaccia in un ambiente virtuale.
 
+Quentin Marre et al. \cite{Marre} hanno voluto testare quale interfaccia, tra non-diegetica e diegetica, fosse la migliore in un videogioco sparatutto.
+Le informazioni sulla salute e munizioni dell'arma erano nel primo caso sovrapposti nello schermo, mentre nel secondo erano integrati nel mondo virtuale.
+In questo studio sono stati coinvolti 41 partecipanti, composti da giocatori esperti e inesperti. 
+Questa ricerca ha concluso che un'UI diegetica ha avuto un effetto positivo sulla performance degli utenti.
+Questo studio conclude consigliando ai lettori di usare interfacce integrate il più possibile con il mondo virtuale.
+
+La tesi si concentra dunque sullo sviluppo di interfacce per la selezione di item, partendo da soluzioni semplici e procedendo verso soluzioni sempre più immersive. 
+
+\chapter{Progettazione dell'ambiente virtuale} % Spiegazione livello e menu vari + periferiche
+
+\section{Periferiche utilizzate}
+Per l'obiettivo di questa tesi sono state utilizzate le periferiche approfondite in seguito.
+
+\subsection{Pedana KAT WALK Mini S}
+Quando si utilizza un visore VR le possibilità per il movimento nell'ambiente sono due: spostarsi tramite teletrasporto o camminare nello spazio reale.
+Usando il teletrasporto ci si sposta premento un tasto sul controller VR e rimanendo fermi nella realtà, il che può attenuare il senso di immersione in un ambiente virtuale.
+Per muoversi nel mondo reale, invece, bisogna avere a disposizione uno spazio ampio, altrimenti il rischio è di andare a sbattere da qualche parte senza vedere dove si va.
+Una soluzione che permette di camminare nello spazio virtuale senza spostarsi realmente è la Pedana KAT WALK Mini S \ref{fig:kat_walk}.
+Questa permette di spostarsi a 360° nel mondo virtuale, di correre, saltare e accovacciarsi. 
+Bisogna indossare delle coperture sulla suola delle scarpe per creare l'effetto di pattinamento sulla pedana.    
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.30\textwidth]{kat_walk_mini}
+    \caption{Pedana KAT WLK Mini S}
+    \label{fig:kat_walk}
+\end{figure}
+
+\subsection{Visore e controller VR}
+Come anticipato nella Sezione \ref{intro}, sono stati utlizzati il visore HTC Vive Pro e i suoi controller.
+Inoltre, per poter mappare l'ambiente reale e tenere traccia della posizione di ogni dispositivo, sono state utilizzate anche le telecamere SteamVR Base Station.
+
+\section{Software Utilizzati}
+Per programmare un ambiente virtuale interagibile tramite visore VR e pedana KAT WALK è stato utilizzato il game engine Unity.
+Per potersi interfacciare con la pedana e calibrarla è stato usato il KATVR SDK, un plug-in sviluppato appositamente da KATVR.
+Le icone delle chiavi sono state generate usando il plug-in di Unity “ThumbCreator” di AndreaDev3D.
+Infine, il plug-in OpenXR ha permesso a unity di interfacciarsi con il visore HTC Vive Pro.
+
+\section{Menu Iniziale}
+\label{menu_init}
+All'apertura dell'applicazione si può scegliere, dal menu iniziale, una delle 4 voci:
+\begin{itemize}
+    \item Calibrazione Pedana: serve per calibrare la pedana in modo da spostarsi correttamente nell'ambiente virtuale;
+    \item Test Pedana: fa provare la pedana attraverso un tutorial, spiegato in seguito \ref{tut_ped};
+    \item Primo Menu e Secondo Menu: entrambe fanno provare un menu specifico, spiegato in seguito \ref{menu_int};
+\end{itemize} 
+Inoltre, l'intera attività può essere terminata premendo sulla "X" rossa in alto a destra.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.40\textwidth]{menu_screen}
+    \caption{Schermata del Menu Iniziale}
+    \label{fig:menu_screen}
+\end{figure}
+
+\subsection{Sottomenu delle Interfacce}
+\label{menu_int}
+Dal Menu Iniziale si può scegliere quale delle due interfacce testare.
+Questa schermata presenta:
+\begin{itemize}
+    \item Tutorial: si può provare l'interfaccia senza fare il livello, spiegata in seguito \ref{tut_int};
+    \item Gioca: si può accedere al livello, spiegato nel dettaglio alla sezione \ref{level};
+\end{itemize}
+Inoltre è presente una freccia in alto a destra che permette di tornare alla schermata precedente, ovvero il Menu Iniziale \ref{menu_init}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.40\textwidth]{first_menu}
+    \caption{Schermata del Menu della Prima Interfaccia}
+    \label{fig:first_menu}
+\end{figure}
+
+\section{Tutorial Design}
+Pensando a questo progetto come una risorsa per eventuali test futuri su utenti, sono stati implementati due tipi di tutorial.
+
+\subsection{Tutorial per la pedana}
+\label{tut_ped}
+Dal Menu Iniziale \ref{menu_init} si può accedere a un tutorial per l'utilizzo della pedana.
+Questo tutorial permette all'utente di muoversi in un ambiente chiuso e piatto.
+L'utente può seguire dei tracciati tratteggiati posti sul terreno per acquisire familiarità con la pedana.
+Inoltre nell'ambiente circostante sono stati posizionati degli oggetti 3D immobili e solidi per dare qualche punto di riferimento in più all'utente. 
+
+\subsection{Tutorial per le interfacce}
+\label{tut_int}
+All'interno del Menu di ogni interfaccia \ref{menu_int} si può testare l'interfaccia scelta.
+Le due interfacce sono i risultati dello sviluppo del progetto e all'interno del tutorial si può provarle con calma al fine di comprenderle al meglio.
+Il tutorial presenta una struttura simile al livello ma senza alcune componenti, dunque le differenze verranno approfondite più avanti \ref{level}. 
+
+\section{Level Design}
+\label{level}
 
 
-https://www.hindawi.com/journals/ijcgt/2018/3757083/ \\ %% good gaming interface
-https://dl.acm.org/doi/abs/10.1145/1536513.1536559 \\ %% rotto
-http://gamescriticism.org/articles/schmalzer-4-1 \\ %% tanto
 
-
-
-\section{Pedana}
-
-\section{Visore}
-
-\chapter{Progettazione dell'ambiente} % Spiegazione livello e menu vari + periferiche
+\section{Chiavi e porte}
 
 
 \chapter{Design delle interfacce} % Percorso per arrivare alle interfacce adatte
 
+
+\section{Interfaccia Select} % < O >
+
+\section{Interfaccia Pie} % a torta
+
+\section{Interfaccia Swish} % bisogna indicare, scomodo
+
+\section{Interfaccia Spin} % ruotare ad ogni chiave a destra o sinistra, evoluzione di select ma con rotazione polso
+
+\section{Interfaccia Wrist Rotation} % rotazione con menu a U
+
+\section{Interfaccia Finale 1: Wrist-Spin} % fusione -> punti di forza di entrambi
+\label{int_wrist-spin}
+
+
+\section{Interfaccia Finale 2: Socket Menu} % socket nelle mani a U
+\label{int_socket}
+
+
+
 \chapter{Discussione}
+Analisi dei due menu finali?
+
 
 \chapter{Conclusioni} % cosa si può fare
+Studio con utenti, questionari da poter applicare, dati raccoglibili
 
 %% Fine dei capitoli normali, inizio dei capitoli-appendice (opzionali)
 %\appendix
