@@ -41,6 +41,9 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 
+% package citazioni url
+\usepackage{url}
+
 \begin{document}
 \maketitle
 
@@ -52,7 +55,7 @@
 %% Ringraziamenti (opzionali)
 \acknowledgements
 Speriamo bene
-%% Sommario (opzionale)
+%% Sommario (opzionale) -> da mettere
 %\abstract
 %Nunc ac dignissim ipsum, quis pulvinar elit. Mauris congue nec leo ornare lobortis. Nulla hendrerit pretium diam nec lobortis. Nullam aliquam laoreet nisl, sit amet facilisis lectus accumsan ut. Duis et elit hendrerit metus venenatis condimentum. Integer id eros molestie, interdum leo sit amet, aliquet metus. Integer fermentum tristique magna, vel luctus neque rhoncus vel. Ut hendrerit et quam et semper. Mauris egestas, odio sed aliquet luctus, magna orci euismod odio, vitae lacinia tellus tellus non lectus. Aliquam urna neque, porta et mattis aliquam, congue sit amet lorem. In ultrices augue sit amet ante vehicula, vitae rhoncus turpis auctor. Donec porta scelerisque eros, at mollis enim imperdiet ut. 
 
@@ -165,7 +168,7 @@ Bisogna indossare delle coperture sulla suola delle scarpe per creare l'effetto 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.30\textwidth]{kat_walk_mini}
+    \includegraphics[width=0.40\textwidth]{kat_walk_mini}
     \caption{Pedana KAT WLK Mini S}
     \label{fig:kat_walk}
 \end{figure}
@@ -177,12 +180,12 @@ Inoltre, per poter mappare l'ambiente reale e tenere traccia della posizione di 
 \section{Software Utilizzati}
 Per programmare un ambiente virtuale interagibile tramite visore VR e pedana KAT WALK è stato utilizzato il game engine Unity.
 Per potersi interfacciare con la pedana e calibrarla è stato usato il KATVR SDK, un plug-in sviluppato appositamente da KATVR.
-Le icone delle chiavi sono state generate usando il plug-in di Unity “ThumbCreator” di AndreaDev3D.
+Le icone delle chiavi \ref{keys} sono state generate usando il \href{https://github.com/AndreaDev3D/ThumbCreator}{plug-in di Unity “ThumbCreator” di AndreaDev3D}.
 Infine, il plug-in OpenXR ha permesso a unity di interfacciarsi con il visore HTC Vive Pro.
 
 \section{Menu Iniziale}
 \label{menu_init}
-All'apertura dell'applicazione si può scegliere, dal menu iniziale, una delle 4 voci:
+All'apertura dell'applicazione si presenta il Menu Iniziale \ref{fig:menu_screen}, dal quale si può scegliere una delle 4 voci:
 \begin{itemize}
     \item Calibrazione Pedana: serve per calibrare la pedana in modo da spostarsi correttamente nell'ambiente virtuale;
     \item Test Pedana: fa provare la pedana attraverso un tutorial, spiegato in seguito \ref{tut_ped};
@@ -192,7 +195,7 @@ Inoltre, l'intera attività può essere terminata premendo sulla "X" rossa in al
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.40\textwidth]{menu_screen}
+    \includegraphics[width=0.60\textwidth]{menu_screen}
     \caption{Schermata del Menu Iniziale}
     \label{fig:menu_screen}
 \end{figure}
@@ -200,7 +203,7 @@ Inoltre, l'intera attività può essere terminata premendo sulla "X" rossa in al
 \subsection{Sottomenu delle Interfacce}
 \label{menu_int}
 Dal Menu Iniziale si può scegliere quale delle due interfacce testare.
-Questa schermata presenta:
+Questa schermata (\ref{fig:first_menu}) presenta:
 \begin{itemize}
     \item Tutorial: si può provare l'interfaccia senza fare il livello, spiegata in seguito \ref{tut_int};
     \item Gioca: si può accedere al livello, spiegato nel dettaglio alla sezione \ref{level};
@@ -209,7 +212,7 @@ Inoltre è presente una freccia in alto a destra che permette di tornare alla sc
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.40\textwidth]{first_menu}
+    \includegraphics[width=0.60\textwidth]{first_menu}
     \caption{Schermata del Menu della Prima Interfaccia}
     \label{fig:first_menu}
 \end{figure}
@@ -232,37 +235,203 @@ Il tutorial presenta una struttura simile al livello ma senza alcune componenti,
 
 \section{Level Design}
 \label{level}
+L'obiettivo della progettazione del livello consiste nell'obbligare l'utente ad interagire con l'interfaccia.
+Si è pensato dunque di creare un corridoio dove il pavimento scompare con l'avanzare del tempo.
+L'utente è quindi costretto a correre in avanti se vuole evitare di cadere e di perdere.
+Lungo il corridoio sono state posizionate 6 porte che bloccano il passaggio, ognuna di un colore diverso.
+L'utente deve selezionare una chiave e toccare la porta dello stesso colore per aprirla.
+Ogni porta che viene aperta aumenta di poco la velocità con cui il pavimento scompare.
+L'utente supera il livello se riesce a raggiungere il traguardo posto alla fine del corridoio senza cadere.
+Arrivando al traguardo, il pavimento viene bloccato e smette di scomparire.
+In ogni istante viene controllata la posizione del giocatore; se cade, l'utente deve ricominciare il livello.
+L'intero percorso è visibile nell'immagine sottostante.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{level}
+    \caption{Livello visto dall'alto}
+    \label{fig:level}
+\end{figure}
 
+\section{Chiavi e Porte: scelta dei colori}
+\label{keys}
+Per distinguere sia le chiavi che le porte si è pensato di assegnargli dei colori diversi.
+I colori iniziali si basano sul modello HSB e comprendono 6 tonalità di colore diverse con l'aggiunta di bianco e nero \ref{fig:keys2}.
 
-\section{Chiavi e porte}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.50\textwidth]{keys2}
+    \caption{Chiavi suddivise in 6 tonalità, con aggiunta di bianco e nero}
+    \label{fig:keys2}
+\end{figure}
+%%%%%%%%%%%%%%
+Durante lo sviluppo delle interfacce si è scelto di ridurre i colori a 6 tonalità, eliminando il bianco e il nero.
+Solo in alcune interfacce iniziali i colori utilizzati sono stati 8: Select \ref{select}, Pie \ref{pie}. % ref ref
+I motivi della riduzione delle tonalità da 8 a 6 verranno affrontati nel capitolo successivo \ref{design}. % ref
+I 6 colori scelti dunque sono rappresentati in figura seguente \ref{fig:keys}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{keys}
+    \caption{Chiavi suddivise in 6 tonalità}
+    \label{fig:keys}
+\end{figure}
+
+Analogamente le porte collocate all'interno del livello possiedono gli stessi colori delle chiavi.
+Una porta vista frontalmente appare come in figura \ref{fig:door}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{door}
+    \caption{Come viene vista la Porta Azzurra}
+    \label{fig:door}
+\end{figure}
+
+\section{Eventuale raccolta dati}
+L'applicazione è composta da una parte di acquisizione di dati, nel caso potessero servire per fare dei test su utenti.
+I file PlayerData.cs e PlayerInputFieldCode.cs permettono di raccogliere dati e scriverli ordinatamente su un file JSON.
+Si può distinguere un giocatore da un altro inserendo un codice univoco all'apertura del programma.
+Così facedo, tutti i dati verranno salvati su un file chiamato come il codice di formato JSON.
+I dati raccolti dagli utenti che provano l'applicazione sono i seguenti:
+\begin{itemize}
+    \item Numero totale delle morti nel primo livello;
+    \item Numero totale delle morti nel secondo livello;
+    \item Tempo di distruizone e collisioni con le Porte del primo livello;
+    \item Tempo di distruzione e collisioni con le Porte del secondo livello;
+    \item Chiavi selezionate e tempo totale del primo livello
+    \item Chiavi selezionate e tempo totale del secondo livello;
+\end{itemize}
 
 
 \chapter{Design delle interfacce} % Percorso per arrivare alle interfacce adatte
+\label{design}
+Per sviluppare le interfacce è stata presa principalmente ispirazione dai videogiochi, ma proseguendo con la progettazione sono stati raggiunti risultati originali. 
+L'obiettivo è riuscire a selezionare una chiave di un determinato colore nel minor tempo possibile.
+L'interfaccia deve anche essere utilizzabile mentre si cammina o si corre e non deve forzare l'utente a fermarsi (altrimenti nel livello cadrebbe).
+Per mostrare l'interfaccia bisogna premere il tasto Trigger, scelto perchè che risulta semplice da premere ed è di facile accessibilità.  
+L'interfaccia non deve rimanere sempre aperta, ma deve chiudersi una volta selezionata la chiave che si vuole impostare come attiva \ref{fig:key_red}.
+La chiave attiva appare nella stessa mano che ha aperto il menu e può essere usata nel livello per aprire la porta corrispondente.
+Questo capitolo tratta in ordine lo sviluppo di tutte le interfacce, partendo dalle prime fino a raggiungere le due finali che sono state integrate nel progetto.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{key_red}
+    \caption{Chiave Rossa impostata come attiva}
+    \label{fig:key_red}
+\end{figure}
 
 \section{Interfaccia Select} % < O >
+\label{select}
+L'interfaccia Select prende ispirazione dal menu di selezione rapido di \textit{Pokémon} del gioco \textit{Pokémon Legends Arceus}. 
+Il menu si trova in basso a destra nella schermata \ref{fig:pok1} e, come si vede meglio nel dettaglio \ref{fig:pok2},  è visibile in qualsiasi momento durante il gioco.
+Questa interfaccia permette di permette cambiare \textit{Pokémon} attivo in modo rapido in base alle esigenze. 
+Nel gioco, si può usare il menu anche in movimento.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{pok1}
+    \caption{Schermata di Pokémon Legends Arceus}
+    \label{fig:pok1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{pok2}
+    \caption{Dettaglio dell'interfaccia di Pokémon Legends Arceus}
+    \label{fig:pok2}
+\end{figure}
+
+Il concetto dell'interfaccia è stato semplificato in una chiave 2D e due frecce disposte ai lati \ref{fig:select}.
+Per aprire il menu bisogna tenere premuto il tasto Trigger.
+Poi, premendo sulla freccia destra o sinistra del trackpad controller VR si può cambiare la chiave attiva.
+Rilasciando il Trigger il menu si chiude e lascia attiva la chiave all'utente come nella figura \ref{fig:key_red}.
+Questo porta l'utente a premere due tasti con la stessa mano: uno va tenuto premuto e l'altro va cliccato quante volte si desidera.
+Uno dei problemi di questa interfaccia è come vengono gestite le chiavi.
+Come anticipato dalla sezione Chiavi e Porte \ref{keys}, all'inizio dello sviluppo sono stati utilizzati 8 colori.
+A livello di codice, le chiavi colorate vengono memorizzate in un vettore; premendo le frecce a destra o a sinistra si possono scorrere tutti gli elementi.
+Bisogna notare che non c'è modo di saltare certi elementi, nè di vedere tra quanti elementi si otterrà quello desiderato.
+Nel gioco di \textit{Pokémon Legends Arceus} questo tipo di menù viene usato sapendo bene l'ordine dei \textit{Pokémon} al suo interno.
+L'utente, invece, non può conoscere in anticipo il contenuto del menu nè deve essere costretto a memorizzare l'ordine delle 8 chiavi nel vettore.
+Inoltre, tenere traccia di tutti gli item che scorre mentre cammina o corre può risultare difficile e macchinoso.
+Sebbene quest'interfaccia risulti rapida da utilizzare, ci sono troppe limitazioni che la rendono poco utilizzabile nel contesto attuale.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{select}
+    \caption{Interfaccia Select}
+    \label{fig:select}
+\end{figure}
+
 
 \section{Interfaccia Pie} % a torta
+\label{pie}
+L'interfaccia Pie si basa sul menu delle armi di \textit{Grand Theft Auto (GTA)}.
+Il giocatore mette in pausa il gioco per selezionare un'arma da un menu a torta.
+Una volta selezionata l'area dell'arma desiderata, il giocatore conferma la scelta premendo un pulsante.
+Il gioco quindi esce dalla pausa e riprende.
+Bisogna notare che questa suddivisione delle armi combacia con la scelta dei colori, ovvero 8. 
+Qua sotto si può osservare un esempio dell'interfaccia trattata.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{gta}
+    \caption{Interfaccia per la selezione di armi in GTA}
+    \label{fig:gta}
+\end{figure}
+
+Altri esempi della stessa interfaccia sono presenti in molti giochi, tra cui \textit{Assassin's Creed} e \textit{Animal Crossing: New Horizons}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.40\textwidth]{ac}
+    \caption{Interfaccia per la selezione di armi in Assassin's Creed}
+    \label{fig:ac}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.40\textwidth]{nh}
+    \caption{Interfaccia per la selezione di oggetti in Animal Crossing: New Horizons}
+    \label{fig:nh}
+\end{figure}
+
+Ispirandosi a questo menu viene quindi sviluppata l'interfaccia Pie.
+Scomponendo gli elementi principali del menu di \textit{GTA} si può notare che sono essenziali un cerchio per posizionare gli elementi e un'area per la loro selezione.
+Ognuna delle 8 aree in cui è diviso il cerchio conterrà uno dei colori delle chiavi.
+Anche in questo caso, il menu si apre tenendo premuto il tasto Trigger del controller.
+Il cambiamento sta nel fatto che ora la selezione può avvenire in tutti i 360° del trackpad.
+È stato quindi riadattato l'input dell'interfaccia Select: basta scorrere il trackpad con il pollice per selezionare la chiave desiderata.
+Infine, va rilasciato il tasto Trigger per tenere in mano la chiave scelta.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{pie}
+    \caption{Interfaccia Pie}
+    \label{fig:pie}
+\end{figure}
+
+L'interfaccia Pie presenta però dei problemi, alcuni molto simili all'interfaccia Select.
+Questo menu è ottimo se il gioco viene messo in pausa, mentre risulta complicato l'utilizzo quando si è in movimento.
+Per essere precisi nella selezione con il trackpad bisogna stare fermi.
+È necessario trovare un movimento che non si basa solo su un dito, ma che coinvolga la mano o il braccio per eseguire la selezione. 
 
 \section{Interfaccia Swish} % bisogna indicare, scomodo
 
+
+\section{Interfaccia Lever}
+
 \section{Interfaccia Spin} % ruotare ad ogni chiave a destra o sinistra, evoluzione di select ma con rotazione polso
 
-\section{Interfaccia Wrist Rotation} % rotazione con menu a U
 
-\section{Interfaccia Finale 1: Wrist-Spin} % fusione -> punti di forza di entrambi
+
+\section{Interfaccia Wrist Rotation} % rotazione con menu a U click apro, click chiudo
+
+\section{Interfaccia Finale 1: Wrist-Spin} % evoluzione wrist -> punti di forza di entrambi
 \label{int_wrist-spin}
 
 
 \section{Interfaccia Finale 2: Socket Menu} % socket nelle mani a U
 \label{int_socket}
-
-
-
-\chapter{Discussione}
-Analisi dei due menu finali?
-
 
 \chapter{Conclusioni} % cosa si può fare
 Studio con utenti, questionari da poter applicare, dati raccoglibili
