@@ -54,7 +54,11 @@
 
 %% Ringraziamenti (opzionali)
 \acknowledgements
-Speriamo bene
+Ringrazio prima di tutto la mia Famiglia, che mi sostiene sempre e che mi ha dato piena fiducia nella scelta del mio percorso universitario.
+Ringrazio il Dott. Fabio Buttussi, mio relatore, per avermi consentito di svolgere l'attività di tirlcinio nel Laboratorio di Interazione Uomo Macchina e per avermi dato la possibilità di lavorare in un ambito che mi appassiona molto.
+Ringrazio Alessandro Forgiarini per la pazienza e l'enorme aiuto che mi ha dato nel corso del tirocinio.
+Ringrazio infine i miei Amici, grazie ai quali questi tre anni sono volati anche troppo in fretta.   
+
 %% Sommario (opzionale) -> da mettere
 %\abstract
 %Nunc ac dignissim ipsum, quis pulvinar elit. Mauris congue nec leo ornare lobortis. Nulla hendrerit pretium diam nec lobortis. Nullam aliquam laoreet nisl, sit amet facilisis lectus accumsan ut. Duis et elit hendrerit metus venenatis condimentum. Integer id eros molestie, interdum leo sit amet, aliquet metus. Integer fermentum tristique magna, vel luctus neque rhoncus vel. Ut hendrerit et quam et semper. Mauris egestas, odio sed aliquet luctus, magna orci euismod odio, vitae lacinia tellus tellus non lectus. Aliquam urna neque, porta et mattis aliquam, congue sit amet lorem. In ultrices augue sit amet ante vehicula, vitae rhoncus turpis auctor. Donec porta scelerisque eros, at mollis enim imperdiet ut. 
@@ -142,7 +146,7 @@ Dai risultati è emerso che gli utenti, usando l'interfaccia sviluppata in 3D, c
 Uno studio di Rennan Raffaele et al.\cite{Raffaele} ha analizzato quale interfaccia immersiva fosse la migliore nei giochi VR.
 Le interfacce a confronto proponevano rappresentazione spaziale, meta, diegetica e non-diegetica.
 Allo studio hanno partecipato 50 utenti, che spaziavano tra designer, sviluppatori e videogiocatori.
-I partecipanti dovevano infine compilare un questionario che paragonava 16 interfacce diverse utilizzate nei videogiochi.
+I partecipanti dovevano infine compilare un questionario che paragonava 16 interfacce diverse utilizzate nei video giochi.
 I risultati hanno mostrato che la rappresentazione diegetica è quella che permette la maggiore immersività di un'interfaccia in un ambiente virtuale.
 
 Quentin Marre et al. \cite{Marre} hanno voluto testare quale interfaccia, tra non-diegetica e diegetica, fosse la migliore in un videogioco sparatutto.
@@ -240,10 +244,12 @@ Si è pensato dunque di creare un corridoio dove il pavimento scompare con l'ava
 L'utente è quindi costretto a correre in avanti se vuole evitare di cadere e di perdere.
 Lungo il corridoio sono state posizionate 6 porte che bloccano il passaggio, ognuna di un colore diverso.
 L'utente deve selezionare una chiave e toccare la porta dello stesso colore per aprirla.
-Ogni porta che viene aperta aumenta di poco la velocità con cui il pavimento scompare.
+Ogni porta che viene aperta aumenta di poco la velocità con cui il pavimento scompare. \\
+
 L'utente supera il livello se riesce a raggiungere il traguardo posto alla fine del corridoio senza cadere.
 Arrivando al traguardo, il pavimento viene bloccato e smette di scomparire.
-In ogni istante viene controllata la posizione del giocatore; se cade, l'utente deve ricominciare il livello.
+In ogni istante, tramite viene controllata la posizione del giocatore.
+Se l'utente cade deve ricominciare il livello.
 L'intero percorso è visibile nell'immagine sottostante.
 
 \begin{figure}[h]
@@ -266,8 +272,8 @@ I colori iniziali si basano sul modello HSB e comprendono 6 tonalità di colore 
 \end{figure}
 %%%%%%%%%%%%%%
 Durante lo sviluppo delle interfacce si è scelto di ridurre i colori a 6 tonalità, eliminando il bianco e il nero.
-Solo in alcune interfacce iniziali i colori utilizzati sono stati 8: Select \ref{select}, Pie \ref{pie}. % ref ref
-I motivi della riduzione delle tonalità da 8 a 6 verranno affrontati nel capitolo successivo \ref{design}. % ref
+Solo in alcune interfacce iniziali i colori utilizzati sono stati 8: Select \ref{select}, Pie \ref{pie}, Swish \ref{swish} e Spin \ref{spin}. % ref ref
+I motivi della riduzione delle tonalità da 8 a 6 sono affrontati nella sezione \ref{swish}. % ref
 I 6 colori scelti dunque sono rappresentati in figura seguente \ref{fig:keys}.
 
 \begin{figure}[h]
@@ -287,8 +293,9 @@ Una porta vista frontalmente appare come in figura \ref{fig:door}.
     \label{fig:door}
 \end{figure}
 
-\section{Eventuale raccolta dati}
-L'applicazione è composta da una parte di acquisizione di dati, nel caso potessero servire per fare dei test su utenti.
+\section{Dati Raccolti}
+\label{data}
+Nell'applicazione è integrata una parte di acquisizione di dati, nel caso dovessero servire per fare dei test su utenti.
 I file PlayerData.cs e PlayerInputFieldCode.cs permettono di raccogliere dati e scriverli ordinatamente su un file JSON.
 Si può distinguere un giocatore da un altro inserendo un codice univoco all'apertura del programma.
 Così facedo, tutti i dati verranno salvati su un file chiamato come il codice di formato JSON.
@@ -302,13 +309,19 @@ I dati raccolti dagli utenti che provano l'applicazione sono i seguenti:
     \item Chiavi selezionate e tempo totale del secondo livello;
 \end{itemize}
 
+Inoltre, ogni interfaccia finale può essere utilizzata sia dal controller della mano destra che dal controller della mano sinistra.
+Questo perché in caso di necessità in eventuali test non vi siano problemi se un utente preferisce usare la mano destra o sinistra.
+
+
+
 
 \chapter{Design delle interfacce} % Percorso per arrivare alle interfacce adatte
 \label{design}
-Per sviluppare le interfacce è stata presa principalmente ispirazione dai videogiochi, ma proseguendo con la progettazione sono stati raggiunti risultati originali. 
+Per sviluppare le interfacce è stata presa principalmente ispirazione dai video giochi, ma proseguendo con la progettazione sono stati raggiunti risultati originali. 
 L'obiettivo è riuscire a selezionare una chiave di un determinato colore nel minor tempo possibile.
-L'interfaccia deve anche essere utilizzabile mentre si cammina o si corre e non deve forzare l'utente a fermarsi (altrimenti nel livello cadrebbe).
-Per mostrare l'interfaccia bisogna premere il tasto Trigger, scelto perchè che risulta semplice da premere ed è di facile accessibilità.  
+L'interfaccia deve anche essere utilizzabile mentre si cammina o si corre e non deve forzare l'utente a fermarsi. \\
+
+Per mostrare l'interfaccia bisogna premere il tasto Trigger, che è stato scelto perché che risulta semplice da premere ed è di facile accessibilità.  
 L'interfaccia non deve rimanere sempre aperta, ma deve chiudersi una volta selezionata la chiave che si vuole impostare come attiva \ref{fig:key_red}.
 La chiave attiva appare nella stessa mano che ha aperto il menu e può essere usata nel livello per aprire la porta corrispondente.
 Questo capitolo tratta in ordine lo sviluppo di tutte le interfacce, partendo dalle prime fino a raggiungere le due finali che sono state integrate nel progetto.
@@ -345,7 +358,8 @@ Il concetto dell'interfaccia è stato semplificato in una chiave 2D e due frecce
 Per aprire il menu bisogna tenere premuto il tasto Trigger.
 Poi, premendo sulla freccia destra o sinistra del trackpad controller VR si può cambiare la chiave attiva.
 Rilasciando il Trigger il menu si chiude e lascia attiva la chiave all'utente come nella figura \ref{fig:key_red}.
-Questo porta l'utente a premere due tasti con la stessa mano: uno va tenuto premuto e l'altro va cliccato quante volte si desidera.
+Questo porta l'utente a premere due tasti con la stessa mano: uno va tenuto premuto e l'altro va cliccato quante volte si desidera. \\
+
 Uno dei problemi di questa interfaccia è come vengono gestite le chiavi.
 Come anticipato dalla sezione Chiavi e Porte \ref{keys}, all'inizio dello sviluppo sono stati utilizzati 8 colori.
 A livello di codice, le chiavi colorate vengono memorizzate in un vettore; premendo le frecce a destra o a sinistra si possono scorrere tutti gli elementi.
@@ -379,7 +393,7 @@ Qua sotto si può osservare un esempio dell'interfaccia trattata.
     \label{fig:gta}
 \end{figure}
 
-Altri esempi della stessa interfaccia sono presenti in molti giochi, tra cui \textit{Assassin's Creed} e \textit{Animal Crossing: New Horizons}.
+Altri esempi della stessa interfaccia sono presenti in molti video giochi, tra cui \textit{Assassin's Creed} e \textit{Animal Crossing: New Horizons}.
 
 \begin{figure}[h]
     \centering
@@ -397,44 +411,205 @@ Altri esempi della stessa interfaccia sono presenti in molti giochi, tra cui \te
 
 Ispirandosi a questo menu viene quindi sviluppata l'interfaccia Pie.
 Scomponendo gli elementi principali del menu di \textit{GTA} si può notare che sono essenziali un cerchio per posizionare gli elementi e un'area per la loro selezione.
-Ognuna delle 8 aree in cui è diviso il cerchio conterrà uno dei colori delle chiavi.
+Ognuna delle 8 aree in cui è diviso il cerchio contiene uno dei colori delle chiavi.
 Anche in questo caso, il menu si apre tenendo premuto il tasto Trigger del controller.
-Il cambiamento sta nel fatto che ora la selezione può avvenire in tutti i 360° del trackpad.
-È stato quindi riadattato l'input dell'interfaccia Select: basta scorrere il trackpad con il pollice per selezionare la chiave desiderata.
-Infine, va rilasciato il tasto Trigger per tenere in mano la chiave scelta.
+Il cambiamento sta nel fatto che ora la selezione può avvenire a 360°.
+Infatti, scorrendo con il pollice sul trackpad è possibile selezionare la chiave del colore desiderato.
+Infine, bisogna rilasciare il tasto Trigger per tenere in mano la chiave scelta.
+Nel cerchio tutti i settori sono grigi e per capire dove si trova un colore l'utente deve passarci sopra con il dito.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.60\textwidth]{pie}
+    \includegraphics[width=0.45\textwidth]{pie}
     \caption{Interfaccia Pie}
     \label{fig:pie}
 \end{figure}
 
 L'interfaccia Pie presenta però dei problemi, alcuni molto simili all'interfaccia Select.
+La selezione evidenzia soltanto un colore alla volta; l'utente non ha idea di dove si trovino gli altri colori e deve passarli tutti prima di avere un'idea chiara delle loro posizioni.  
 Questo menu è ottimo se il gioco viene messo in pausa, mentre risulta complicato l'utilizzo quando si è in movimento.
-Per essere precisi nella selezione con il trackpad bisogna stare fermi.
-È necessario trovare un movimento che non si basa solo su un dito, ma che coinvolga la mano o il braccio per eseguire la selezione. 
+Quando ci si muove, infatti, l'input risulta impreciso ed è molto facile commettere errori involontari nella selezione.
+È necessario quindi trovare un movimento che non si basi solo su un dito, ma che coinvolga la mano o il braccio per catturare un input più intenzionale e consapevole.
 
 \section{Interfaccia Swish} % bisogna indicare, scomodo
+\label{swish}
+L'interfaccia Swish, visibile in figura \ref{fig:swish}, è l'evoluzione dell'interfaccia Pie \ref{pie}.
 
+Quando viene premuto il tasto Trigger il menu si apre.
+La particolarità di questo menu è che non serve premere altri pulsanti.
+Infatti, per selezionare una chiave bisogna indicare con il controller il colore desiderato e rilasciare il tasto Trigger.
+Il codice prende in input il punto iniziale in cui è stato premuto il tasto Trigger e calcola la distanza e l'angolo dove viene rilasciato. \\
+
+L'utente può vedere tutti i colori appena apre il menu, in modo da poter scegliere subito quale desidera.
+In questo modo non perde tempo a cercare colori che venivano oscurati o nascosti dall'interfaccia.
+Il movimento per la selezione della chiave ricorda il movimento che braccio fa mentre si corre.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.50\textwidth]{swish}
+    \caption{Interfaccia Swish}
+    \label{fig:swish}
+\end{figure}
+
+Nel paragrafo precedente si è visto come l'interfaccia Swish prova a risolvere i problemi della precedente.
+Ci sono però ancora delle questioni che lasciano libero spazio allo sviluppo.
+Per prima cosa non è evidente quale colore si seleziona fino a quando non si ha la chiave in mano.
+Siccome il movimento è ampio e rapido, si rischia di sbagliare selezione.
+Ciò comporta a dover aprire di nuovo l'interfaccia e ripetere la selezione. \\
+
+Un altro problema che sorge riguarda il movimento del braccio durante la corsa.
+Il movimento verso l'alto risulta naturale, ma i colori del cerchio posizionati in basso sono difficili da indicare per la selezione della chiave.
+Occorre quindi spostare in alto tutti i colori, in modo da semplificare il movimento e renderlo facilmente accessibile. 
 
 \section{Interfaccia Lever}
+\label{lever}
+L'interfaccia Lever \ref{lever} presenta uno sviluppo significativo rispetto all'interfaccia Swish \ref{swish}.
+Per ridurre il numero di angoli da raggiungere con la mano si è passato da 8 a 6 colori. 
+Sono stati quindi rimossi il colore bianco e nero ed il cerchio è stato considerevolmente ridotto di dimensioni.
+L'apertura e selezione della chiave viene effettuata come nel menu precedente.
+Bisogna tenere premuto soltanto il tasto Trigger e rilasciarlo quando ci si trova nel colore che si vuole selezionare.
+In questa interfaccia, però, il movimento della mano è cambiato. \\
+
+Nel menù precedente, per indicare quale colore si volesse scegliere, la mano partiva da una posizione orizzontale e passava a verticale.
+Questo effetto poteva ridurre la precisione del movimento, siccome la mano si spostava di parecchio durante la selezione.
+Nell'interfaccia Lever la mano rimane sempre nella posizione verticale.
+Il codice calcola l'angolo tra la mano in posizione verticale e l'asse orizzontale.
+In questo modo si riesce a trovare la posizione precisa indicata dalla punta delle dita.
+ 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{lever}
+    \caption{Interfaccia Lever}
+    \label{fig:lever}
+\end{figure}
+
+L'innovazione di questa interfaccia è significativa e motstra molti miglioramenti rispetto alle precedenti.
+Nonostante ciò, ci sono comunque degli aspetti negativi.
+Durante la fase di movimento risulta scomodo tenere la mano in posizione perfettamente verticale.
+Il movimento compiuto dalle braccia durante la corsa ostacola il funzionamento corretto dell'interfaccia.
+Inoltre, nell'intervallo tra due settori del menu possono verificarsi imprecisioni durante la selezione.
+Va notato inoltre notato che non viene ancora evidenziato in alcun modo il colore che l'utente vuole selezionare. 
+
+\section{Interfaccia Wrist Rotation} % rotazione polso con lever menu 
+\label{wrist_rot}
+L'interfaccia Lever \ref{lever} viene migliorata con lo sviluppo dell'interfaccia Wrist Rotation, visibile nella figura \ref{fig:wrist_rot}.
+L'unica cosa che cambia dall'interfaccia precedente riguarda il tipo di movimento che si esegue per selezionare una chiave.
+Prima la mano veniva tenuta in posizione verticale e andava inclinata in base a quale chiave si volesse scegliere.
+Con il nuovo tipo di movimento, attivare una determinata chiave risulta più semplice.
+Dal punto di vista del codice, bisogna pensare ad un asse immaginario che percorre polso, mano e controller.
+L'angolo di rotazione attorno al polso viene calcolato e utilizzato per capire quale chiave l'utente vuole selezionare.
+L'apertura e chiusura è analoga alle interfacce precedenti, che funzionano tenendo premuto e rilasciando il pulsante Trigger. \\
+
+Siccome il movimento per la selezione è l'unico cambiamento apportato, questa interfaccia presenta ancora tutti i lati negativi dell'interfaccia Lever \ref{lever}.
+Lo sviluppo dell'interfaccia Wrist Rotation, però, è un passaggio intermedio che si è dimostrato essere fondamentale per lo sviluppo di una delle due interfacce finali \ref{int_wrist-spin}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{wrist_rot}
+    \caption{Interfaccia Wrist Rotation}
+    \label{fig:wrist_rot}
+\end{figure}
 
 \section{Interfaccia Spin} % ruotare ad ogni chiave a destra o sinistra, evoluzione di select ma con rotazione polso
+\label{spin}
+L'interfaccia Spin \ref{fig:spin} sembra essere un passo indietro rispetto alle precedenti, ma è solo apparenza.
+Il suo sviluppo si basa sul codice solido e semplice dell'interfaccia Select \ref{select}; per questo il menu ha 8 colori.
+La forma dell'interfaccia richiama quella di un anello portachiavi, ma è solo un altro modo di viualizzare il cerchio del menu Select.
+Questa interfaccia è composta da un indicatore, che rimane fisso sulla posizione verticale; a ruotare sono tutte le chiavi.
+Il movimento su cui si basa la rotazione delle chiavi è lo stesso del menu Wrist Rotation \ref{wrist_rot}.
+L'unica differenza è che per ogni pressione e rilascio del Trigger ci si può muovere a destra o a sinistra di una posizione. \\
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{spin}
+    \caption{Interfaccia Spin}
+    \label{fig:spin}
+\end{figure}
 
-
-\section{Interfaccia Wrist Rotation} % rotazione con menu a U click apro, click chiudo
+L'interfaccia Spin presenta dei miglioramenti per l'immersività e per la chiarezza nella scelta della chiave.
+Però questo menu presenta molti problemi evidenti.
+Ad esempio, ogni volta che viene rilasciato il Trigger viene selezionata una chiave.
+Dunque, se l'utente deve scegliere una chiave opposta a quella precedentemente selezionata, dovrà attivare inutilmente molte chiavi. 
+Il movimento di rotazione del polso può risultare faticoso siccome viene ripetuto per un elevato numero di volte.
+Inoltre, questa interfaccia è molto lenta e necessita di un'elevata attenzione per raggiungere la chiave che si vuole scegliere.
+Nato come una prova, il menu Spin ha mostrato vantaggi solidi ed è stato usato come base per creare una delle due interfacce finali \ref{int_wrist-spin}.  
 
 \section{Interfaccia Finale 1: Wrist-Spin} % evoluzione wrist -> punti di forza di entrambi
 \label{int_wrist-spin}
+Lo sviluppo delle interfacce precedenti, soprattutto di Spin \ref{spin} e Wrist Rotation \ref{wrist_rot}, ha permesso la creazione di questa interfaccia.
+Siccome è un ibrido tra Spin e Wrist Rotation, questa interfaccia si chiama Wrist-Spin e può essere vista nell'immagine sottostante \ref{fig:wrist_spin}.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{wrist_spin}
+    \caption{Interfaccia Wrist-Spin}
+    \label{fig:wrist_spin}
+\end{figure}
 
-\section{Interfaccia Finale 2: Socket Menu} % socket nelle mani a U
-\label{int_socket}
+Questa interfaccia mostra numerosi aspetti positivi.
+La pressione ed il rilascio del Trigger è rimasta inalterata dalle interfacce precedenti, risultando semplice ed efficace.
+L'utente sa quale chiave sta scegliendo perché questa viene evidenziata in modo evidente.
+Il movimento dell'evidenziatore è settato con la posizione di ogni chiave a livello di codice. 
+Questo sigifica che non possono esserci situazioni intermedie o di incertezza, perché l'evidenziatore sarà sempre su una chiave.
+
+I colori sono 6, così un utente non deve sforzarsi a piegare troppo il braccio in posizioni non usuali.
+Questa interfaccia, durante lo sviluppo, non ha ostacolato i movimenti della corsa e sembra essere adatto per il tipo di attività che deve svolgere. 
+
+\section{Interfaccia Finale 2: Spawn} % socket nelle mani a U
+\label{int_spawn}
+L'interfaccia Spawn \ref{fig:spawn} è considerata finale perché è stata sviluppata dai vantaggi noti delle interfacce precedenti.
+La differenza di questa interfaccia rispetto alle altre si può notare a livello di codice.
+Il tasto Trigger premuto su una mano fa apparire delle sfere colorate attorno all'altra mano dell'utente.
+Tenendo premuto il Trigger, l'utente può toccare la sfera del colore che vuole scegliere.
+Al rilascio del pulsante l'interfaccia si chiude e in mano rimane attiva la chiave selezionata. 
+Come riferimento si può osservare la figura \ref{fig:spawn}. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{spawn}
+    \caption{Interfaccia Spawn}
+    \label{fig:spawn}
+\end{figure}
+
+Questo menu utilizza la libreria Collider di Unity, trattando entrambe le mani dell'utente e tutte le sfere come Collider.
+Il Collider è un'area attorno ad un oggetto, che può essere solida o attraversabile.
+Il Collider è utile per identificare se ci sono collisioni tra oggetti diversi nell'ambiente virtuale ed è parecchio usato all'interno di Unity.
+In questa interfaccia i Collider servono per essere sicuri di selezionare un determinato colore.
+Come si può notare dal particolare della figura \ref{fig:coll}, i Collider sono molto piccoli e non c'è rischio da parte dell'utente di creare situazioni di imprecisione. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.60\textwidth]{coll}
+    \caption{Particolare del Collider della sfera Blu}
+    \label{fig:coll}
+\end{figure}
+
+\newpage
+Il movimento obbligatorio di questa interfaccia richiede che le mani si incrocino per selezionare una chiave.
+Questa azione avviene spontaneamente durante la corsa o la camminata, e non ostacola i movimenti.
+Inoltre, la precisione della selezione è molto alta perché è l'utente stesso a muoversi come se fosse nella realtà.
+Per questi motivi l' interfaccia non necessita di un evidenziatore per la selezione.
+Inoltre, tutte le posizioni dei colori sono rese note appena l'utente apre il menu.
+Così facendo può muoversi liberamente fin da subito senza che degli elementi risultino nascosti. 
+
 
 \chapter{Conclusioni} % cosa si può fare
-Studio con utenti, questionari da poter applicare, dati raccoglibili
+Sviluppando le interfacce trattate nella tesi sono emersi molti fattori positivi che costituiscono un'interfaccia VR.
+Le considerazioni per sviluppare una buona interfaccia per la Realtà Virtuale si possono così riassumere:
+\begin{itemize}
+    \item Mostrare ogni elemento dell'interfaccia, senza tenere nascosto nulla;
+    \item Il movimento per selezionare l'item deve essere consono all'attività che l'utente deve svolgere;
+    \item L'interfaccia deve fornire un indicatore che evidenzi in modo evidente quale item l'utente sta selezionando;
+    \item L'interfaccia deve essere semplice da aprire e chiudere, senza essere troppo macchinosa o complicata;
+    \item L'interfaccia deve mantenere una linea di coinvolgimento e di immersivita con l'ambiente virtuale che la circonda; \\
+\end{itemize}
+
+Un possibile sviluppo futuro potrebbe essere il test dell'applicazione e delle interfacce finali da parte di un gruppo di utenti.
+Come accennato in precedenza nella sezione \ref{data}, l'applicazione è già predisposta per la raccolta di dati da entrambe le interfacce.
+I dati raccolti dall'applicazione, accompagnati da un questionario per ogni interfaccia testata, potrebbero comporre uno studio in grado di definire l'immersività o l'utilità di entrambe le interfacce. \\
+
+L'obiettivo di sviluppare delle interfacce per la selezione di item nella la Realtà Virtuale è stato raggiunto.
+I problemi e gli errori delle interfacce iniziali sono stati utili perché hanno portato ad un'implementazione sempre più mirata e efficace per il tipo di attività che la tesi ha richiesto.
 
 %% Fine dei capitoli normali, inizio dei capitoli-appendice (opzionali)
 %\appendix
