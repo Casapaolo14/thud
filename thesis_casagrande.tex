@@ -196,8 +196,8 @@ Per sviluppare le interfacce è stata presa principalmente ispirazione dai video
 L'interfaccia deve permettere all'utente di selezionare degli item in maniera semplice e fluida, nel minor tempo possibile.
 L'interfaccia deve anche essere utilizzabile mentre si cammina o si corre sulla pedana (Figura \ref{fig:kat_walk}) e non deve obbligare l'utente a fermarsi.
 L'item che l'utente dovrà selezionare tramite l'interfaccia è una Chiave.
-Ogni Chiave è caratterizzata da un colore diverso; questa scelta è trattata nella sezone \ref{keys}.
-L'ambiente di sviluppo per testare le interfacce è spiegato approfonditamente nella sezione \ref{level}. \\
+Ogni Chiave è caratterizzata da un colore diverso; questa scelta è trattata nella Sezione \ref{keys}.
+L'ambiente di sviluppo per testare le interfacce è spiegato approfonditamente nella Sezione \ref{level}. \\
 
 Per mostrare l'interfaccia bisogna premere il tasto Trigger, che è stato scelto perché che risulta semplice da premere ed è di facile accessibilità.  
 L'interfaccia non deve rimanere sempre aperta, ma deve chiudersi una volta selezionata la Chiave che si vuole impostare come attiva (Figura \ref{fig:key_red}).
@@ -216,7 +216,7 @@ I nomi di tutte le interfacce sono inventati e sono stati assegnati dal sottoscr
 \section{Interfaccia Select} % < O >
 \label{select}
 L'interfaccia Select prende ispirazione dal menu di selezione rapido di \textit{Pokémon} del gioco \textit{Pokémon Legends Arceus}. 
-Il menu si trova in basso a destra nella schermata \ref{fig:pok1} e, come si vede meglio nel dettaglio nella Figura \ref{fig:pok2}, è visibile in qualsiasi momento durante il gioco.
+Il menu si trova in basso a destra nella schermata (Figura \ref{fig:pok1}) e, come si vede meglio nel dettaglio (Figura \ref{fig:pok2}), è visibile in qualsiasi momento durante il gioco.
 Questa interfaccia permette di permette cambiare il \textit{Pokémon} attivo in modo rapido in base alle esigenze. 
 Nel gioco, si può usare il menu anche in movimento.
 
@@ -237,12 +237,12 @@ Nel gioco, si può usare il menu anche in movimento.
 Il concetto dell'interfaccia è stato semplificato in una Chiave 2D e due frecce disposte ai lati (Figura \ref{fig:select}).
 Per aprire il menu bisogna tenere premuto il tasto Trigger.
 Poi, premendo sulla freccia destra o sinistra del trackpad controller VR si può cambiare la Chiave attiva.
-Rilasciando il Trigger il menu si chiude e lascia attiva la Chiave all'utente come nella Figura \ref{fig:key_red}.
+Rilasciando il Trigger il menu si chiude e lascia attiva la Chiave all'utente (Figura \ref{fig:key_red}).
 Questo porta l'utente a premere due tasti con la stessa mano: uno va tenuto premuto e l'altro va cliccato quante volte si desidera. \\
 
 Uno dei problemi di questa interfaccia è come vengono gestite le Chiavi.
 All'inizio dello sviluppo sono stati utilizzati 8 colori assegnati ad ogni Chiave.
-L'evoluzione dell'interfacce, come spiegato in seguito \ref{swish}, ha ridotto la scelta da 8 a 6.
+L'evoluzione dell'interfacce, come spiegato in seguito nella Sezione \ref{swish}, ha ridotto la scelta da 8 a 6.
 A livello di codice, le Chiavi colorate vengono memorizzate in un vettore; premendo le frecce a destra o a sinistra si possono scorrere tutti gli elementi.
 Bisogna notare che non c'è modo di saltare certi elementi, nè di vedere tra quanti elementi si otterrà quello desiderato.
 Nel gioco di \textit{Pokémon Legends Arceus} questo tipo di menù viene usato sapendo bene l'ordine dei \textit{Pokémon} al suo interno.
@@ -314,7 +314,7 @@ Quando ci si muove, infatti, l'input risulta impreciso ed è molto facile commet
 
 \section{Interfaccia Swish} % bisogna indicare, scomodo
 \label{swish}
-L'interfaccia Swish, visibile in Figura \ref{fig:swish}, è l'evoluzione dell'interfaccia Pie \ref{pie}.
+L'interfaccia Swish, visibile in Figura (Figura \ref{fig:swish}), è l'evoluzione dell'interfaccia Pie nella Sezione\ref{pie}.
 
 Quando viene premuto il tasto Trigger il menu si apre.
 La particolarità di questo menu è che non serve premere altri pulsanti.
@@ -344,7 +344,7 @@ Occorre quindi spostare in alto tutti i colori, in modo da semplificare il movim
 
 \section{Interfaccia Lever}
 \label{lever}
-L'interfaccia Lever \ref{lever} presenta uno sviluppo significativo rispetto all'interfaccia Swish \ref{swish}.
+L'interfaccia Lever (Figura \ref{fig:lever}) presenta uno sviluppo significativo rispetto all'interfaccia Swish trattata nella Sezione \ref{swish}.
 Per ridurre il numero di angoli da raggiungere con la mano si è passato da 8 a 6 colori. 
 Sono stati quindi rimossi il colore bianco e nero ed il cerchio è stato considerevolmente ridotto di dimensioni.
 L'apertura e selezione della Chiave viene effettuata come nel menu precedente.
@@ -373,7 +373,7 @@ Va notato inoltre notato che non viene ancora evidenziato in alcun modo il color
 
 \section{Interfaccia Wrist Rotation} % rotazione polso con lever menu 
 \label{wrist_rot}
-L'interfaccia Lever \ref{lever} viene migliorata con lo sviluppo dell'interfaccia Wrist Rotation, visibile nella Figura \ref{fig:wrist_rot}.
+L'interfaccia Lever \ref{lever} viene migliorata con lo sviluppo dell'interfaccia Wrist Rotation (Figura \ref{fig:wrist_rot}).
 L'unica cosa che cambia dall'interfaccia precedente riguarda il tipo di movimento che si esegue per selezionare una Chiave.
 Prima la mano veniva tenuta in posizione verticale e andava inclinata in base a quale Chiave si volesse scegliere.
 Con il nuovo tipo di movimento, attivare una determinata Chiave risulta più semplice.
@@ -381,8 +381,8 @@ Dal punto di vista del codice, bisogna pensare ad un asse immaginario che percor
 L'angolo di rotazione attorno al polso viene calcolato e utilizzato per capire quale Chiave l'utente vuole selezionare.
 L'apertura e chiusura è analoga alle interfacce precedenti, che funzionano tenendo premuto e rilasciando il pulsante Trigger. \\
 
-Siccome il movimento per la selezione è l'unico cambiamento apportato, questa interfaccia presenta ancora tutti i lati negativi dell'interfaccia Lever \ref{lever}.
-Lo sviluppo dell'interfaccia Wrist Rotation, però, è un passaggio intermedio che si è dimostrato essere fondamentale per lo sviluppo di una delle due interfacce finali \ref{int_wrist-spin}.
+Siccome il movimento per la selezione è l'unico cambiamento apportato, questa interfaccia presenta ancora tutti i lati negativi dell'interfaccia Lever trattata nella Sezione \ref{lever}.
+Lo sviluppo dell'interfaccia Wrist Rotation, però, è un passaggio intermedio che si è dimostrato essere fondamentale per lo sviluppo di una delle due interfacce finali, di cui si parla nella Sezione \ref{int_wrist-spin}.
 
 \begin{figure}[h]
     \centering
@@ -393,10 +393,10 @@ Lo sviluppo dell'interfaccia Wrist Rotation, però, è un passaggio intermedio c
 
 \section{Interfaccia Spin} % ruotare ad ogni chiave a destra o sinistra, evoluzione di select ma con rotazione polso
 \label{spin}
-Lo sviluppo dell' interfaccia Spin (Figura \ref{fig:spin}) si basa sul codice solido e semplice dell'interfaccia Select \ref{select}; per questo il menu ha 8 colori.
+Lo sviluppo dell' interfaccia Spin (Figura \ref{fig:spin}) si basa sul codice solido e semplice dell'interfaccia Select trattata nella Sezione \ref{select}; per questo il menu ha 8 colori.
 La forma dell'interfaccia richiama quella di un anello portachiavi, ma è solo un altro modo di viualizzare il cerchio del menu Select.
 Questa interfaccia è composta da un indicatore, che rimane fisso sulla posizione verticale; a ruotare sono tutte le Chiavi.
-Il movimento su cui si basa la rotazione delle Chiavi è lo stesso del menu Wrist Rotation \ref{wrist_rot}.
+Il movimento su cui si basa la rotazione delle Chiavi è lo stesso del menu Wrist Rotation, affrontato nella Sezione \ref{wrist_rot}.
 L'unica differenza è che per ogni pressione e rilascio del Trigger ci si può muovere a destra o a sinistra di una posizione. \\
 
 \begin{figure}[h]
@@ -416,7 +416,7 @@ Nato come una prova, il menu Spin ha mostrato vantaggi solidi ed è stato usato 
 
 \section{Interfaccia Finale 1: Wrist-Spin} % evoluzione wrist -> punti di forza di entrambi
 \label{int_wrist-spin}
-Lo sviluppo delle interfacce precedenti, soprattutto di Spin \ref{spin} e Wrist Rotation \ref{wrist_rot}, ha permesso la creazione di questa interfaccia.
+Lo sviluppo delle interfacce precedenti, soprattutto di Spin della Sezione \ref{spin} e Wrist Rotation della Sezione \ref{wrist_rot}, ha permesso la creazione di questa interfaccia.
 Siccome è un ibrido tra Spin e Wrist Rotation, questa interfaccia è stata soprannominata Wrist-Spin e può essere vista nell'immagine sottostante (Figura \ref{fig:wrist_spin}).
 
 \begin{figure}[h]
@@ -442,7 +442,7 @@ La differenza di questa interfaccia rispetto alle altre si può notare a livello
 Il tasto Trigger premuto su una mano fa apparire delle sfere colorate attorno all'altra mano dell'utente.
 Tenendo premuto il Trigger, l'utente può toccare la sfera del colore che vuole scegliere.
 Al rilascio del pulsante l'interfaccia si chiude e in mano rimane attiva la Chiave selezionata. 
-Come riferimento si può osservare la Figura \ref{fig:spawn}. \\
+Come riferimento si può osservare la Figura sottostante (Figura \ref{fig:spawn}). \\
 
 \begin{figure}[h]
     \centering
@@ -455,7 +455,7 @@ Questo menu utilizza la libreria Collider di Unity, trattando entrambe le mani d
 Il Collider è un'area attorno ad un oggetto, che può essere solida o attraversabile.
 Il Collider è utile per identificare se ci sono collisioni tra oggetti diversi nell'ambiente virtuale.
 In questa interfaccia i Collider servono per essere sicuri di selezionare un determinato colore.
-Come si può notare dal particolare della Figura \ref{fig:coll}, i Collider sono molto piccoli e non c'è rischio da parte dell'utente di creare situazioni di imprecisione. \\
+Come si può notare dal particolare (Figura \ref{fig:coll}), i Collider sono molto piccoli e non c'è rischio da parte dell'utente di creare situazioni di imprecisione. \\
 
 \begin{figure}[h]
     \centering
@@ -481,8 +481,8 @@ In questo capitolo viene trattato lo sviluppo del livello, dei menu e di alcuni 
 All'apertura dell'applicazione si presenta il Menu Iniziale (Figura \ref{fig:menu_screen}), dal quale si può scegliere una delle 4 voci:
 \begin{itemize}
     \item Calibrazione Pedana: serve per calibrare la pedana in modo da spostarsi correttamente nell'ambiente virtuale;
-    \item Test Pedana: fa provare la pedana attraverso un tutorial, spiegato in seguito \ref{tut_ped};
-    \item Primo Menu e Secondo Menu: entrambe fanno provare un menu specifico, spiegato in seguito \ref{menu_int};
+    \item Test Pedana: fa provare la pedana attraverso un tutorial, spiegato in seguito nella Sezione \ref{tut_ped};
+    \item Primo Menu e Secondo Menu: entrambe fanno provare un menu specifico, spiegato in seguito nella Sezione \ref{menu_int};
 \end{itemize} 
 Inoltre, l'intera attività può essere terminata premendo sulla "X" rossa in alto a destra.
 
@@ -498,10 +498,10 @@ Inoltre, l'intera attività può essere terminata premendo sulla "X" rossa in al
 Dal Menu Iniziale si può scegliere quale delle due interfacce testare.
 Questa schermata (Figura \ref{fig:first_menu}) presenta:
 \begin{itemize}
-    \item Tutorial: si può provare l'interfaccia senza fare il livello, spiegata in seguito \ref{tut_int};
-    \item Gioca: si può accedere al livello, spiegato nel dettaglio alla sezione \ref{level};
+    \item Tutorial: si può provare l'interfaccia senza fare il livello, spiegata in seguito nella Sezione \ref{tut_int};
+    \item Gioca: si può accedere al livello, spiegato nel dettaglio alla Sezione \ref{level};
 \end{itemize}
-Inoltre è presente una freccia in alto a destra che permette di tornare alla schermata precedente, ovvero il Menu Iniziale \ref{menu_init}.
+Inoltre è presente una freccia in alto a destra che permette di tornare alla schermata precedente, ovvero il Menu Iniziale trattato nella Sezione \ref{menu_init}.
 
 \begin{figure}[h]
     \centering
@@ -515,16 +515,16 @@ Pensando a questo progetto come una risorsa per eventuali test futuri su utenti,
 
 \subsection{Tutorial per la pedana}
 \label{tut_ped}
-Dal Menu Iniziale \ref{menu_init} si può accedere a un tutorial per l'utilizzo della pedana.
+Dal Menu Iniziale trattato nella Sezione \ref{menu_init} si può accedere a un tutorial per l'utilizzo della pedana.
 Questo tutorial permette all'utente di muoversi in un ambiente chiuso e piatto.
 L'utente può seguire dei tracciati tratteggiati posti sul terreno per acquisire familiarità con la pedana.
 Inoltre nell'ambiente circostante sono stati posizionati degli oggetti 3D immobili e solidi per dare qualche punto di riferimento in più all'utente. 
 
 \subsection{Tutorial per le interfacce}
 \label{tut_int}
-All'interno del Menu di ogni interfaccia \ref{menu_int} si può testare l'interfaccia scelta.
+All'interno del Menu di ogni interfaccia, di cui si è parlato nella Sezione \ref{menu_int}, si può testare l'interfaccia scelta.
 Le due interfacce sono i risultati dello sviluppo del progetto e all'interno del tutorial si può provarle con calma al fine di comprenderle al meglio.
-Il tutorial presenta una struttura simile al livello ma senza la possibilità di cadere, cosa che verrà spiegata in seguito \ref{level}. 
+Il tutorial presenta una struttura simile al livello ma senza la possibilità di cadere, cosa che verrà spiegata in seguito nella Sezione \ref{level}. 
 
 \section{Level Design}
 \label{level}
@@ -561,9 +561,9 @@ I colori iniziali si basano sul modello HSB e comprendono 6 tonalità di colore 
 \end{figure}
 %%%%%%%%%%%%%%
 Durante lo sviluppo delle interfacce si è scelto di ridurre i colori a 6 tonalità, eliminando il bianco e il nero.
-Solo in alcune interfacce iniziali i colori utilizzati sono stati 8: Select \ref{select}, Pie \ref{pie}, Swish \ref{swish} e Spin \ref{spin}. % ref ref
-I motivi della riduzione delle tonalità da 8 a 6 sono affrontati nella sezione \ref{swish}. % ref
-I 6 colori scelti dunque sono rappresentati nella Figura \ref{fig:keys}. \\
+Solo in alcune interfacce iniziali i colori utilizzati sono stati 8: Select trattato nella Sezione \ref{select}, Pie trattato nella Sezione \ref{pie}, Swish trattato nella Sezione \ref{swish} e Spin trattato nella Sezione \ref{spin}. % ref ref
+I motivi della riduzione delle tonalità da 8 a 6 sono affrontati nella Sezione \ref{swish}. % ref
+I 6 colori scelti dunque sono rappresentati qua sotto (Figura \ref{fig:keys}). \\
 
 \begin{figure}[h]
     \centering
@@ -573,7 +573,7 @@ I 6 colori scelti dunque sono rappresentati nella Figura \ref{fig:keys}. \\
 \end{figure}
 
 Analogamente le porte collocate all'interno del livello possiedono gli stessi colori delle Chiavi.
-Una Porta vista frontalmente appare come in Figura \ref{fig:door}.
+Una Porta vista frontalmente appare come nella Figura sottostante (Figura \ref{fig:door}).
 
 \begin{figure}[h]
     \centering
@@ -583,11 +583,11 @@ Una Porta vista frontalmente appare come in Figura \ref{fig:door}.
 \end{figure}
 
 \section{Funzionamento del livello}
-L'utente può seguire le indicazioni sul Menu Iniziale \ref{menu_init} e poi scegliere di affrontare un livello \ref{menu_int}.
+L'utente può seguire le indicazioni sul Menu Iniziale della Sezione \ref{menu_init} e poi scegliere di affrontare un livello \ref{menu_int}.
 Entrambi i livelli proposti sono uguali, presentando la stessa lunghezza del pavimento, stesso ordine delle porte e stessa velocità con la quale il pavimento scompare.
 La differenza tra i due livelli riguarda quindi solo l'interfaccia utilizzabile per aprire le porte. \\
 
-Cliccando quindi sulla voce Gioca dal Sottomenu delle Interfacce \ref{menu_int}, l'utente carica il livello.
+Cliccando quindi sulla voce Gioca dal Sottomenu delle Interfacce trattato nella Sezione \ref{menu_int}, l'utente carica il livello.
 Si può notare qui sotto (Figura \ref{fig:lvl1}) la schermata visibile dall'utente appena inizia il livello.
 
 \begin{figure}[h]
@@ -600,7 +600,7 @@ Si può notare qui sotto (Figura \ref{fig:lvl1}) la schermata visibile dall'uten
 \newpage
 Segue poi l'apertura dell'interfaccia (Figura \ref{fig:lvl2}) per la selezione di una Chiave.
 Tutti gli avvenimenti che riguardano le interfacce, le chiavi e le porte vengono memorizzati.
-La raccolta dei dati è spiegata più approfonditamente nella sezione successiva \ref{data}. \\
+La raccolta dei dati è spiegata più approfonditamente nella Sezione successiva \ref{data}. \\
 
 \begin{figure}[h]
     \centering
@@ -644,14 +644,14 @@ Superato il traguardo, all'utente viene mostrata la schermata di completamento d
     \label{fig:lvl6}
 \end{figure}
 
-Dopo aver terminato il livello, l'utente viene fatto tornare al Menu Iniziale \ref{menu_init}.
-Tutti i dati raccolti vengono scritti tramite codice e registrtrati su appositi file JSON, come trattato nella sezione seguente \ref{data}.
+Dopo aver terminato il livello, l'utente viene fatto tornare al Menu Iniziale nella Sezione \ref{menu_init}.
+Tutti i dati raccolti vengono scritti tramite codice e registrtrati su appositi file JSON, come trattato nella Sezione seguente \ref{data}.
 
 \section{Dati Raccolti}
 \label{data}
 Nell'applicazione è stata integrata una parte di acquisizione di dati, nel caso dovessero servire per fare dei test su utenti.
 I file PlayerData.cs e PlayerInputFieldCode.cs permettono di raccogliere dati e scriverli ordinatamente su un file JSON.
-Si può distinguere un giocatore da un altro inserendo un codice univoco all'apertura del programma, come visibile nella Figura \ref{fig:cod} .
+Si può distinguere un giocatore da un altro inserendo un codice univoco all'apertura del programma (Figura \ref{fig:cod}).
 
 \begin{figure}[h]
     \centering
@@ -677,7 +677,7 @@ Questo perché in caso di necessità in eventuali test non vi siano problemi se 
 \section{Software Utilizzati}
 Per programmare un ambiente virtuale interagibile tramite visore VR e pedana KAT WALK è stato utilizzato il game engine Unity.
 Per potersi interfacciare con la pedana e calibrarla è stato usato il KATVR SDK, un plug-in sviluppato appositamente da KATVR.
-Le icone delle Chiavi \ref{keys} sono state generate usando il \href{https://github.com/AndreaDev3D/ThumbCreator}{plug-in di Unity “ThumbCreator” di AndreaDev3D}.
+Le icone delle Chiavi della Sezione \ref{keys} sono state generate usando il \href{https://github.com/AndreaDev3D/ThumbCreator}{plug-in di Unity “ThumbCreator” di AndreaDev3D}.
 Infine, il plug-in OpenXR ha permesso di interfacciare l'ambiente in Unity con il visore HTC Vive Pro.
 
 
@@ -693,7 +693,7 @@ Le considerazioni per sviluppare una buona interfaccia per la Realtà Virtuale s
 \end{itemize}
 
 Un possibile sviluppo futuro potrebbe essere il test dell'applicazione e delle interfacce finali da parte di un gruppo di utenti.
-Come accennato in precedenza nella sezione \ref{data}, l'applicazione è già predisposta per la raccolta di dati da entrambe le interfacce.
+Come accennato in precedenza nella Sezione \ref{data}, l'applicazione è già predisposta per la raccolta di dati da entrambe le interfacce.
 I dati raccolti dall'applicazione, accompagnati da un questionario per ogni interfaccia testata, potrebbero comporre uno studio in grado di definire l'immersività o l'utilità di entrambe le interfacce. \\
 
 L'obiettivo di sviluppare delle interfacce per la selezione di item nella la Realtà Virtuale è stato raggiunto.
