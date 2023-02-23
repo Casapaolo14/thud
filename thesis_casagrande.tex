@@ -98,7 +98,7 @@ Il visore VR utilizzato per l'esperimento è il Visore VR HTC Vive Pro, visibile
     \label{fig:vive_pro}
 \end{figure}
 
-Insieme al visore, per interagire all'interno dell'ambiente virtuale, l'utente utilizza una coppia di controller per muovere entrambe le mani \ref{fig:vive_contr}.
+Insieme al visore, per interagire all'interno dell'ambiente virtuale, l'utente utilizza una coppia di controller per muovere entrambe le mani (Figura \ref{fig:vive_contr}).
 Questi controller mappano il movimento delle mani nello spazio reale, che viene poi rappresentato nel mondo virtuale. 
 L'utente può premere i tasti sui controller per esercitare azioni specifiche che interagiscono con l'ambiente virtuale. \\
 
@@ -122,7 +122,7 @@ Quando si utilizza un visore VR le possibilità per gestire il movimento nell'am
 
 Movimenti basati su joystick, leaning, teletrasporto o walk in place possono attenuare il senso di immersione nell'ambiente virtuale.
 Per muoversi nel mondo reale, invece, bisogna avere a disposizione uno spazio ampio, altrimenti il rischio è di andare a sbattere da qualche parte senza vedere dove si va.
-Una soluzione che permette di camminare nello spazio virtuale senza spostarsi realmente è la Pedana KAT WALK Mini S \ref{fig:kat_walk}.
+Una soluzione che permette di camminare nello spazio virtuale senza spostarsi realmente è la Pedana KAT WALK Mini S (Figura \ref{fig:kat_walk}).
 Questa permette di spostarsi a 360° nel mondo virtuale, di correre, saltare e accovacciarsi. 
 Bisogna indossare delle coperture sulla suola delle scarpe per creare l'effetto di pattinamento sulla pedana.    
 
@@ -194,13 +194,13 @@ La tesi dunque si concentra dunque sullo sviluppo di interfacce per la selezione
 
 Per sviluppare le interfacce è stata presa principalmente ispirazione dai video giochi, ma proseguendo con la progettazione sono stati raggiunti risultati originali. 
 L'interfaccia deve permettere all'utente di selezionare degli item in maniera semplice e fluida, nel minor tempo possibile.
-L'interfaccia deve anche essere utilizzabile mentre si cammina o si corre sulla pedana \ref{fig:kat_walk} e non deve obbligare l'utente a fermarsi.
+L'interfaccia deve anche essere utilizzabile mentre si cammina o si corre sulla pedana (Figura \ref{fig:kat_walk}) e non deve obbligare l'utente a fermarsi.
 L'item che l'utente dovrà selezionare tramite l'interfaccia è una Chiave.
 Ogni Chiave è caratterizzata da un colore diverso; questa scelta è trattata nella sezone \ref{keys}.
 L'ambiente di sviluppo per testare le interfacce è spiegato approfonditamente nella sezione \ref{level}. \\
 
 Per mostrare l'interfaccia bisogna premere il tasto Trigger, che è stato scelto perché che risulta semplice da premere ed è di facile accessibilità.  
-L'interfaccia non deve rimanere sempre aperta, ma deve chiudersi una volta selezionata la Chiave che si vuole impostare come attiva \ref{fig:key_red}.
+L'interfaccia non deve rimanere sempre aperta, ma deve chiudersi una volta selezionata la Chiave che si vuole impostare come attiva (Figura \ref{fig:key_red}).
 La Chiave attiva appare nella stessa mano che ha aperto il menu e può essere usata nel livello per aprire la Porta corrispondente.
 Questo capitolo tratta in ordine lo sviluppo di tutte le interfacce, partendo dalle prime fino a raggiungere le due finali che sono state integrate nel progetto.
 
@@ -216,7 +216,7 @@ I nomi di tutte le interfacce sono inventati e sono stati assegnati dal sottoscr
 \section{Interfaccia Select} % < O >
 \label{select}
 L'interfaccia Select prende ispirazione dal menu di selezione rapido di \textit{Pokémon} del gioco \textit{Pokémon Legends Arceus}. 
-Il menu si trova in basso a destra nella schermata \ref{fig:pok1} e, come si vede meglio nel dettaglio \ref{fig:pok2},  è visibile in qualsiasi momento durante il gioco.
+Il menu si trova in basso a destra nella schermata \ref{fig:pok1} e, come si vede meglio nel dettaglio nella Figura \ref{fig:pok2}, è visibile in qualsiasi momento durante il gioco.
 Questa interfaccia permette di permette cambiare il \textit{Pokémon} attivo in modo rapido in base alle esigenze. 
 Nel gioco, si può usare il menu anche in movimento.
 
@@ -234,7 +234,7 @@ Nel gioco, si può usare il menu anche in movimento.
     \label{fig:pok2}
 \end{figure}
 
-Il concetto dell'interfaccia è stato semplificato in una Chiave 2D e due frecce disposte ai lati \ref{fig:select}.
+Il concetto dell'interfaccia è stato semplificato in una Chiave 2D e due frecce disposte ai lati (Figura \ref{fig:select}).
 Per aprire il menu bisogna tenere premuto il tasto Trigger.
 Poi, premendo sulla freccia destra o sinistra del trackpad controller VR si può cambiare la Chiave attiva.
 Rilasciando il Trigger il menu si chiude e lascia attiva la Chiave all'utente come nella Figura \ref{fig:key_red}.
@@ -393,7 +393,7 @@ Lo sviluppo dell'interfaccia Wrist Rotation, però, è un passaggio intermedio c
 
 \section{Interfaccia Spin} % ruotare ad ogni chiave a destra o sinistra, evoluzione di select ma con rotazione polso
 \label{spin}
-Lo sviluppo dell' interfaccia Spin \ref{fig:spin} si basa sul codice solido e semplice dell'interfaccia Select \ref{select}; per questo il menu ha 8 colori.
+Lo sviluppo dell' interfaccia Spin (Figura \ref{fig:spin}) si basa sul codice solido e semplice dell'interfaccia Select \ref{select}; per questo il menu ha 8 colori.
 La forma dell'interfaccia richiama quella di un anello portachiavi, ma è solo un altro modo di viualizzare il cerchio del menu Select.
 Questa interfaccia è composta da un indicatore, che rimane fisso sulla posizione verticale; a ruotare sono tutte le Chiavi.
 Il movimento su cui si basa la rotazione delle Chiavi è lo stesso del menu Wrist Rotation \ref{wrist_rot}.
@@ -417,7 +417,7 @@ Nato come una prova, il menu Spin ha mostrato vantaggi solidi ed è stato usato 
 \section{Interfaccia Finale 1: Wrist-Spin} % evoluzione wrist -> punti di forza di entrambi
 \label{int_wrist-spin}
 Lo sviluppo delle interfacce precedenti, soprattutto di Spin \ref{spin} e Wrist Rotation \ref{wrist_rot}, ha permesso la creazione di questa interfaccia.
-Siccome è un ibrido tra Spin e Wrist Rotation, questa interfaccia è stata soprannominata Wrist-Spin e può essere vista nell'immagine sottostante \ref{fig:wrist_spin}.
+Siccome è un ibrido tra Spin e Wrist Rotation, questa interfaccia è stata soprannominata Wrist-Spin e può essere vista nell'immagine sottostante (Figura \ref{fig:wrist_spin}).
 
 \begin{figure}[h]
     \centering
@@ -437,7 +437,7 @@ Questa interfaccia, durante lo sviluppo, non ha ostacolato i movimenti della cor
 
 \section{Interfaccia Finale 2: Spawn} % socket nelle mani a U
 \label{int_spawn}
-L'interfaccia Spawn \ref{fig:spawn} è considerata finale perché è stata sviluppata dai vantaggi noti delle interfacce precedenti.
+L'interfaccia Spawn (Figura \ref{fig:spawn}) è considerata finale perché è stata sviluppata dai vantaggi noti delle interfacce precedenti.
 La differenza di questa interfaccia rispetto alle altre si può notare a livello di design.
 Il tasto Trigger premuto su una mano fa apparire delle sfere colorate attorno all'altra mano dell'utente.
 Tenendo premuto il Trigger, l'utente può toccare la sfera del colore che vuole scegliere.
@@ -478,7 +478,7 @@ In questo capitolo viene trattato lo sviluppo del livello, dei menu e di alcuni 
 
 \section{Menu Iniziale}
 \label{menu_init}
-All'apertura dell'applicazione si presenta il Menu Iniziale \ref{fig:menu_screen}, dal quale si può scegliere una delle 4 voci:
+All'apertura dell'applicazione si presenta il Menu Iniziale (Figura \ref{fig:menu_screen}), dal quale si può scegliere una delle 4 voci:
 \begin{itemize}
     \item Calibrazione Pedana: serve per calibrare la pedana in modo da spostarsi correttamente nell'ambiente virtuale;
     \item Test Pedana: fa provare la pedana attraverso un tutorial, spiegato in seguito \ref{tut_ped};
@@ -496,7 +496,7 @@ Inoltre, l'intera attività può essere terminata premendo sulla "X" rossa in al
 \subsection{Sottomenu delle Interfacce}
 \label{menu_int}
 Dal Menu Iniziale si può scegliere quale delle due interfacce testare.
-Questa schermata (\ref{fig:first_menu}) presenta:
+Questa schermata (Figura \ref{fig:first_menu}) presenta:
 \begin{itemize}
     \item Tutorial: si può provare l'interfaccia senza fare il livello, spiegata in seguito \ref{tut_int};
     \item Gioca: si può accedere al livello, spiegato nel dettaglio alla sezione \ref{level};
@@ -551,7 +551,7 @@ L'intero percorso è visibile nell'immagine sottostante.
 \section{Chiavi e Porte: scelta dei colori}
 \label{keys}
 Per distinguere sia le Chiavi che le porte si è pensato di assegnargli dei colori diversi.
-I colori iniziali si basano sul modello HSB e comprendono 6 tonalità di colore diverse con l'aggiunta di bianco e nero \ref{fig:keys2}.
+I colori iniziali si basano sul modello HSB e comprendono 6 tonalità di colore diverse con l'aggiunta di bianco e nero (Figura \ref{fig:keys2}).
 
 \begin{figure}[h]
     \centering
@@ -588,7 +588,7 @@ Entrambi i livelli proposti sono uguali, presentando la stessa lunghezza del pav
 La differenza tra i due livelli riguarda quindi solo l'interfaccia utilizzabile per aprire le porte. \\
 
 Cliccando quindi sulla voce Gioca dal Sottomenu delle Interfacce \ref{menu_int}, l'utente carica il livello.
-Si può notare qui sotto \ref{fig:lvl1} la schermata visibile dall'utente appena inizia il livello.
+Si può notare qui sotto (Figura \ref{fig:lvl1}) la schermata visibile dall'utente appena inizia il livello.
 
 \begin{figure}[h]
     \centering
@@ -598,7 +598,7 @@ Si può notare qui sotto \ref{fig:lvl1} la schermata visibile dall'utente appena
 \end{figure}
 
 \newpage
-Segue poi l'apertura dell'interfaccia \ref{fig:lvl2} per la selezione di una Chiave.
+Segue poi l'apertura dell'interfaccia (Figura \ref{fig:lvl2}) per la selezione di una Chiave.
 Tutti gli avvenimenti che riguardano le interfacce, le chiavi e le porte vengono memorizzati.
 La raccolta dei dati è spiegata più approfonditamente nella sezione successiva \ref{data}. \\
 
@@ -609,8 +609,8 @@ La raccolta dei dati è spiegata più approfonditamente nella sezione successiva
     \label{fig:lvl2}
 \end{figure}
 
-L'utente deve quindi avvicinarsi e toccare la Porta con la Chiave per aprirla \ref{fig:lvl3}.
-Se la Chiave scelta è corretta, la Porta con cui l'utente ha interagito scompare \ref{fig:lvl4}. \\
+L'utente deve quindi avvicinarsi e toccare la Porta con la Chiave per aprirla (Figura \ref{fig:lvl3}).
+Se la Chiave scelta è corretta, la Porta con cui l'utente ha interagito scompare (Figura \ref{fig:lvl4}). \\
 
 \begin{figure}[h]
     \centering
@@ -627,8 +627,8 @@ Se la Chiave scelta è corretta, la Porta con cui l'utente ha interagito scompar
 \end{figure}
 
 \newpage
-Una volta che sono state aperte tutte le Porte, l'utente deve raggiungere il traguardo posto alla fine del percorso \ref{fig:lvl5}.
-Superato il traguardo, all'utente viene mostrata la schermata di completamento del livello \ref{fig:lvl6}. \\
+Una volta che sono state aperte tutte le Porte, l'utente deve raggiungere il traguardo posto alla fine del percorso (Figura \ref{fig:lvl5}).
+Superato il traguardo, all'utente viene mostrata la schermata di completamento del livello (Figura \ref{fig:lvl6}). \\
 
 \begin{figure}[h]
     \centering
